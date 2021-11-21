@@ -165,9 +165,39 @@ function binSearchRec(array, num, start, end){
 	return -1;
 }
 
-console.log("search(10): ", search(array, 10))
-console.log("search(1): ", search(array, 1))
-console.log("search(56): ", search(array, 56))
-console.log("search(7): ", search(array, 7))
+// console.log("search(10): ", search(array, 10))
+// console.log("search(1): ", search(array, 1))
+// console.log("search(56): ", search(array, 56))
+// console.log("search(7): ", search(array, 7))
 
 
+// .7
+
+function decodeString(string) {
+		/\d+/
+}
+
+function parseSubString(num, str) {
+	if (num < 2) {
+		return str;
+	}
+
+	return  str + parseSubString(num - 1, str);
+}
+
+// console.log("parseSubString(3, a): ", parseSubString(3, 'a')) // aaa
+// console.log("parseSubString(2, bc): ", parseSubString(2, 'bc')) // bcbc
+
+// console.log("decodeString(3[a]2[bc]): ", decodeString('3[a]2[bc]')) // aaabcbc
+// console.log("decodeString(3[a2[c]]): ", decodeString('3[a2[c]]')) // accaccacc
+// console.log("decodeString(2[abc]3[cd]ef): ", decodeString('2[abc]3[cd]ef')) // abcabccdcdcdef
+// console.log("decodeString(abc3[cd]xyz): ", decodeString('abc3[cd]xyz')) // abccdcdcdxyz
+
+// const new_str = '';
+// let start = 0;
+// let chars = 0;
+// for	(let i = 0; i < string.length; ++ i){
+// 	if (/[0-9]/.includes(string.charAt((i)))) {
+// 		for ()
+// 	}
+// }
