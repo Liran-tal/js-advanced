@@ -29,7 +29,7 @@ function countDownInfiniteRec(num) {
 // countDownInfiniteRec(5);
 
 
-// .2
+// .2.1
 
 function reverseStringLibFuncs(string) {
 	// if (!isStringValid(string)) {
@@ -42,7 +42,7 @@ function reverseStringLibFuncs(string) {
 // console.log('reverseStringLibFuncs(hello): ', reverseStringLibFuncs('hello'));
 // console.log('reverseStringLibFuncs(Hannah): ', reverseStringLibFuncs('Hannah'));
 
-// 
+// .2.2
 
 function reverseStringLoop(string) {
 	const res = [];
@@ -60,20 +60,40 @@ function reverseStringLoop(string) {
 // console.log('reverseStringLoop(hello): ', reverseStringLoop('hello'));
 // console.log('reverseStringLoop(Hannah): ', reverseStringLoop('Hannah'));
 
-// 
+// .2.3
 
 function reverseStringRecursive(string) {
-	const res = [];
+	let res = [];
+	let counter = 0;
 	// if (!isStringValid(string)) {
 	// 	return -1;
 	// }
+	res.push(reverseStringRec(string, res, counter));
+	return res.join('')
+}
 
-	for (let i = string.length - 1; i >= 0; -- i){
-		res.push(string.charAt(i));
+function reverseStringRec(string, res, counter) {
+	if (counter < string.length - 1) {
+		res.push(reverseStringRec(string, res, counter + 1));
+	}
+
+	return string.charAt(counter);
+}
+
+// console.log('reverseStringRecursive(hello): ', reverseStringRecursive('hello'));
+// console.log('reverseStringRecursive(Hannah): ', reverseStringRecursive('Hannah'));
+
+
+// .3
+
+function F(n) {
+	let res = n
+	if (n > 1) {
+		return res = F(n - 1) + F(n - 2);
 	}
 
 	return res
 }
 
-// console.log('reverseStringRecursive(hello): ', reverseStringRecursive('hello'));
-// console.log('reverseStringRecursive(Hannah): ', reverseStringRecursive('Hannah'));
+console.log('F(4): ', F(6));
+
