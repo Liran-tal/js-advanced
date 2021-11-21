@@ -125,14 +125,18 @@ function F(n) {
 // if (base == 0) return 0;
 // if (base == 0 && num === 1) return 0;
 // if (num == 0) return -1;
-// function findExp(base, num) {
-// 	let exp = 0;
-// 	return num / base !== 1 ? ++ exp : findExp(base, num / base)
-// }
+function findExp(base, num) {
+	let exp = 0;
+	if (num != base){
+		exp = findExp(base, num / base)
+	} 
+	
+	return ++ exp; 
+}
 
-// console.log(findExp(4, 16));
-// console.log(findExp(4, 64));
-// console.log(findExp(5, 125));
+console.log(findExp(4, 16));
+console.log(findExp(2, 1024));
+console.log(findExp(5, 125));
 
 
 //.5
@@ -157,5 +161,5 @@ function binSearchRec(array, num, start, end){
 	return binSearchRec(array, num, start, end);
 }
 
-console.log("search(10): ", search(array, 10))
-console.log("search(10): ", search(array, 2))
+// console.log("search(10): ", search(array, 10))
+// console.log("search(10): ", search(array, 2))
