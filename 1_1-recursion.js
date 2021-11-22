@@ -174,6 +174,10 @@ function binSearchRec(array, num, start, end){
 // .7
 
 function decodeString(string) {
+		if (string === '') {
+			return string
+		}
+		
 		/\d+/
 }
 
