@@ -61,3 +61,98 @@ function solution(S){
 // console.log("solution('())'): ", solution('())'));
 
 
+function Queue(capacity) {
+	this.q = [];
+	this.capacity = capacity;
+	this.enque = function (x) {
+		-- this.capacity;
+		this.q.push(x);
+		return this.capacity;
+	};
+	this.deque = function () {
+		++ this.capacity;
+		return this.q.shift();
+	};
+	this.isEmpty = function () {
+		return this.q.length === 0 ? true : false;
+	};
+	this.contains = function (x) {
+		return this.q.includes(x) == true 
+		? true
+		: false;
+	}; 
+	this.isFull = function () {
+		return this.capacity === 0 ? true : false;
+	};
+}	
+
+const testQ = new Queue(5);
+console.log("testQ.isEmpty(): ", testQ.isEmpty());
+console.log("testQ.isFull(): ", testQ.isFull());
+console.log("testQ.enque(1): ", testQ.enque(1));
+console.log("testQ.isEmpty(): ", testQ.isEmpty());
+console.log("testQ.enque(2): ", testQ.enque(2));
+console.log("testQ.enque(3): ", testQ.enque(3));
+console.log("testQ.enque(4): ", testQ.enque(4));
+console.log("testQ.enque(5): ", testQ.enque(5));
+console.log("testQ.isFull(): ", testQ.isFull());
+console.log("testQ.contains(1): ", testQ.contains(1));
+console.log("testQ.contains(): ", testQ.deque());
+console.log("testQ.contains(1): ", testQ.contains(1));
+
+
+// console.log("testQ.(): ", testQ.());
+
+// function Queue(capacity) {
+// 	this.q = [];
+// 	this.capacity = capacity;
+	// this.contains = ; 
+	// this.addToStart = ;
+	// this.addToEnd = ;
+	// this.isEmpty = function () {
+	// 	return this.q.length === 0 ? true : false;
+	// };
+	// this.isFull = ;
+	// this.removeFirst = ;
+// }	
+
+
+
+// function contains(x) {
+		
+// }
+
+function linkedList() {
+	this.node = {
+		data: undefined,
+		next: null
+	};
+	this.capacity = capacity;
+	this.addAfter = function (data) {
+		-- this.capacity;
+		this;
+		return this.capacity;
+	};
+	this.deque = function () {
+		++ this.capacity;
+		return this.q.shift();
+	};
+	this.isEmpty = function () {
+		return this.q.length === 0 ? true : false;
+	};
+	this.contains = function (x) {
+		return this.q.includes(x) == true 
+		? true
+		: false;
+	}; 
+	this.isFull = function () {
+		return this.capacity === 0 ? true : false;
+	};
+}
+
+
+// addToStart(x)
+// addToEnd(x)
+// isEmpty()
+// isFull()
+// removeFirst(x) - removes first element that equals x
